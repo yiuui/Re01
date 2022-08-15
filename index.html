@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>flex练习</title>
+		<link rel="icon" href="img/favicon.ico"/>
+		<meta name="viewport" content="width=device-width, initial-scale=0">
+		<meta name="description" content="这是一个跟着康哥视频学的flex布局">
+		<style type="text/css">
+		body
+		{
+			margin: 0;
+			height: 100vh;
+			background-color: #eee;
+		}
+		/* 
+		{
+			border: 1px solid black;/* *是通用选择器的意思能直观的看到所有透明元素的位置/
+		}*/
+		.yiying
+		{
+			box-shadow: rgb(0 0 0/ 20%) 0px 2px 1px -1px,
+			rgb(0 0 0/14%)0px 1px 1px 0px,rgb(0 0 0/12%)0px 1px 3px 0px;/*是给所有白色盒子加的阴影*/
+		}
+		.flex
+		{
+			display: flex;
+		}
+		.baise1{
+			background-color: white;
+		}
+		.flex1
+		{
+			flex: 1;
+		}
+		.column
+		{
+			flex-direction: column;
+		}
+		.mg8
+		{
+			margin: 8px;
+		}
+		.mgr8
+		{
+			margin-right: 8px;
+		}
+		.mgt8
+		{
+			margin-top: 8px;
+		}
+		.mgl8
+		{
+			margin-left: 8px;
+		}
+		.daohang
+		{
+			padding: 10px;
+			border-bottom: 1px solid grey;/*下边边框1px solid实线 加颜色*/
+			font-size: 14px;
+			color: black;
+		}
+		img{
+			border-radius: 20px;
+		}
+		.bor
+		{
+			border-bottom: 1px solid #999;
+		}
+		.daohang{
+			overflow: hidden;
+			font-size: 1.4rem;
+		}
+		@media(max-width:600px)/*当屏幕小于六百px时，生效这里的css*/
+		{
+			.cenian{
+				display: none;
+			}
+			.neirong
+			{
+				flex-direction: column;
+			}
+			.shujuqu
+			{
+				flex-direction: column;
+			}
+			.youqu
+			{
+				margin-left: 8px;
+			}
+			.shujuqu
+			{
+				margin: 0 0 8px;
+				flex: auto;
+			}
+		}
+		.neirong::-webkit-scrollbar
+		{
+			display: none;
+		}
+		</style>
+	</head >
+	<body class="flex cenian">
+		<!--侧边栏-->
+		<div class="baise1 cenian yiying " style="width: 200px;z-index: 2; ">
+			<!--头像栏-->
+			<div style="
+			padding: 10px;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid #999;"
+			class="flex"><!--border-bottom: 1px solid #999是边框区分的意思-->
+			<img src="img/IMG_20220517_170426_CROP.jpg" width="60px" height="60px"/>
+				<div style="margin-left: 10px;font-size: 14px;">Re01</div>
+			</div>
+			<!--导航栏-->
+			<div class="flex1">
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+				<div class="daohang">导航条</div>
+			</div>
+		</div>
+		
+		<!--主区域-->
+		<div class="flex1 flex column ">
+			<!--头部栏-->
+		  <div style="height: 60px;z-index: 1;" class="baise1 yiying "></div><!--z-index: 1是加了一个z轴高度，为了在列表项多的时候不会被覆盖-->
+			  <!--内容区-->
+		     <div style="overflow: auto;" class="flex1 flex neirong"><!--overflow: auto是为了列表项多的时候滚动鼠标只会在内容区滚动，内容区会包裹所有内容-->
+			     <!--左区-->
+			    <div style="flex: 3;" class="flex column mgr8 mgl8">
+			          <!--数据区-->
+			          <div class="flex mgt8 shujuqu">
+				          <!--数据块-->
+				          <div style="height: 100px;" class=" baise1 flex1 mgr8 yiying"></div>
+				          <div style="height: 100px;" class=" baise1 flex1 mgr8 yiying"></div>
+				          <div style="height: 100px;" class=" baise1 flex1 mgr8 yiying"></div>
+				          <div style="height: 100px;" class=" baise1 flex1 yiying"></div>
+			          </div>
+			           <!--列表区-->
+			          <div class="flex column">
+						  <!--列表项-->
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  <div style="height: 160px;" class="baise1 mgt8 yiying"></div>
+						  
+					  </div>
+			    </div>
+			          <!--右区-->
+			     <div style="flex: 1;" class="flex column youqu mgr8 mgt8">
+			         <!--提示区-->
+			         <div style="height: 150px;"class="baise1 yiying bor"></div>
+					 <div style="height: 150px;"class="baise1 yiying bor"></div>
+					 <div style="height: 150px;"class="baise1 yiying bor"></div>
+			         <!--消息区-->
+			         <div style="height: 300px;" class="baise1  mgt8 yiying"></div>
+					 <div style="height: 300px;" class="baise1  mgt8 yiying"></div>
+					 <div style="height: 300px;" class="baise1  mgt8 yiying"></div>
+			     </div>
+		  </div>
+		</div>
+	</body>
+</html>
